@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram OAuth Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .status {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .info {
+            background-color: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram OAuth Test</h1>
+        <p>Test the Instagram OAuth flow implementation</p>
+        
+        <button id="connectBtn" onclick="connectInstagram()">Connect Instagram</button>
+        
+        <div id="status" class="status info" style="display: none;">
+            <strong>Status:</strong> <span id="statusText">Ready</span>
+        </div>
+        
+        <div id="userInfo" style="display: none;">
+            <h3>Connected Account:</h3>
+            <p><strong>Username:</strong> <span id="username"></span></p>
+            <p><strong>Account Type:</strong> <span id="accountType"></span></p>
+            <p><strong>Followers:</strong> <span id="followers"></span></p>
+            <p><strong>Media Count:</strong> <span id="mediaCount"></span></p>
+            <p><strong>Connected At:</strong> <span id="connectedAt"></span></p>
+        </div>
+    </div>
+
+    <script>
+        function connectInstagram() {
+            const statusDiv = document.getElementById('status');
+            const statusText = document.getElementById('statusText');
+            
+            statusDiv.style.display = 'block';
+            statusDiv.className = 'status info';
+            statusText.textContent = 'Opening Instagram OAuth...';
+            
+            // Open popup window for OAuth
+            const popup = window.open(
+                '/auth/instagram', 
+                'instagram_oauth', 
+                'width=600,height=700,scrollbars=yes,resizable=yes'
+            );
+            
+            // Listen for messages from popup
+            window.addEventListener('message', function(event) {
+                // Verify origin for security
+                if (event.origin !== window.location.origin) {
+                    return;
+                }
+                
+                if (event.data.type === 'INSTAGRAM_AUTH_SUCCESS') {
+                    statusDiv.className = 'status success';
+                    statusText.textContent = 'Instagram connected successfully!';
+                    
+                    // Display user info
+                    const userInfo = document.getElementById('userInfo');
+                    document.getElementById('username').textContent = event.data.data.username;
+                    document.getElementById('accountType').textContent = event.data.data.accountType;
+                    document.getElementById('followers').textContent = event.data.data.followersCount || 0;
+                    document.getElementById('mediaCount').textContent = event.data.data.mediaCount || 0;
+                    document.getElementById('connectedAt').textContent = new Date(event.data.data.connectedAt).toLocaleString();
+                    
+                    userInfo.style.display = 'block';
+                    
+                } else if (event.data.type === 'INSTAGRAM_AUTH_ERROR') {
+                    statusDiv.className = 'status error';
+                    statusText.textContent = `Error: ${event.data.error}`;
+                }
+                
+                // Close popup if it's still open
+                if (popup && !popup.closed) {
+                    popup.close();
+                }
+            });
+            
+            // Check if popup was closed manually
+            const checkClosed = setInterval(function() {
+                if (popup.closed) {
+                    clearInterval(checkClosed);
+                    if (statusText.textContent === 'Opening Instagram OAuth...') {
+                        statusDiv.className = 'status error';
+                        statusText.textContent = 'OAuth cancelled by user';
+                    }
+                }
+            }, 1000);
+        }
+        
+        // Check URL parameters for direct callback (non-popup flow)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success')) {
+            const statusDiv = document.getElementById('status');
+            const statusText = document.getElementById('statusText');
+            statusDiv.style.display = 'block';
+            statusDiv.className = 'status success';
+            statusText.textContent = `Instagram connected successfully! Username: ${urlParams.get('username')}`;
+        } else if (urlParams.get('error')) {
+            const statusDiv = document.getElementById('status');
+            const statusText = document.getElementById('statusText');
+            statusDiv.style.display = 'block';
+            statusDiv.className = 'status error';
+            statusText.textContent = `Error: ${urlParams.get('error')}`;
+        }
+    </script>
+</body>
+</html>

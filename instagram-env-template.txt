@@ -1,0 +1,5 @@
+
+# After creating your Instagram app, update these values:
+# INSTAGRAM_CLIENT_ID=your_actual_app_id_here
+# INSTAGRAM_CLIENT_SECRET=your_actual_app_secret_here  
+# INSTAGRAM_ACCESS_TOKEN=your_generated_user_token_here

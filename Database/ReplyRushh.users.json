@@ -1,0 +1,208 @@
+[{
+  "_id": {
+    "$oid": "68ccea16ffdab507d835606c"
+  },
+  "name": "het",
+  "email": "het196200@gmail.com",
+  "password": "$2a$10$pFP0Gn3TbRcMwHTDQjUzIeXX4j896.1YnyL0ULC0ccLJQ90U72q6C",
+  "role": "user",
+  "avatar": null,
+  "phone": null,
+  "bio": null,
+  "company": null,
+  "website": null,
+  "isActive": true,
+  "lastLogin": {
+    "$date": "2025-09-19T06:06:15.476Z"
+  },
+  "facebook": {
+    "id": null,
+    "name": null,
+    "email": null,
+    "picture": null,
+    "link": null,
+    "accessToken": null,
+    "refreshToken": null,
+    "connectedAt": null,
+    "lastLoginAt": null
+  },
+  "instagram": {
+    "username": null,
+    "accessToken": null,
+    "instagramUserId": null,
+    "accountType": null,
+    "mediaCount": 0,
+    "followersCount": 0,
+    "followingCount": 0,
+    "biography": null,
+    "website": null,
+    "profilePictureUrl": null,
+    "isConnected": false,
+    "connectedAt": null,
+    "lastSyncAt": null,
+    "media": []
+  },
+  "createdAt": {
+    "$date": "2025-09-19T05:28:54.843Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-19T06:06:15.477Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ccf4aba7eee9d5b2758647"
+  },
+  "name": "Vishal",
+  "email": "vishaltesting028@gmail.com",
+  "password": "$2a$10$lZ7AdizwRSwZvBuzZIJ5zOeMVnrzlLhNKzXMpWpgVos3wbkU6edb.",
+  "role": "user",
+  "avatar": null,
+  "phone": null,
+  "bio": null,
+  "company": null,
+  "website": null,
+  "isActive": true,
+  "lastLogin": {
+    "$date": "2025-09-20T06:22:15.967Z"
+  },
+  "facebook": {
+    "id": null,
+    "name": null,
+    "email": null,
+    "picture": null,
+    "link": null,
+    "accessToken": null,
+    "refreshToken": null,
+    "connectedAt": null,
+    "lastLoginAt": null
+  },
+  "instagram": {
+    "username": null,
+    "accessToken": null,
+    "instagramUserId": null,
+    "accountType": null,
+    "mediaCount": 0,
+    "followersCount": 0,
+    "followingCount": 0,
+    "biography": null,
+    "website": null,
+    "profilePictureUrl": null,
+    "isConnected": false,
+    "connectedAt": null,
+    "lastSyncAt": null,
+    "media": []
+  },
+  "createdAt": {
+    "$date": "2025-09-19T06:14:03.064Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-20T06:22:15.972Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ce468283028b841563d805"
+  },
+  "name": "laxmi",
+  "email": "laxmitesting7@gmail.com",
+  "password": "$2a$10$ycCnnQIaHBmy60HaaO4xze209/L49XaiQ4PIQYzI0aZowGfEVwV/2",
+  "role": "user",
+  "avatar": null,
+  "phone": null,
+  "bio": null,
+  "company": null,
+  "website": null,
+  "isActive": true,
+  "lastLogin": {
+    "$date": "2025-09-22T03:41:42.294Z"
+  },
+  "facebook": {
+    "id": null,
+    "name": null,
+    "email": null,
+    "picture": null,
+    "link": null,
+    "accessToken": null,
+    "refreshToken": null,
+    "connectedAt": null,
+    "lastLoginAt": null
+  },
+  "instagram": {
+    "username": null,
+    "accessToken": null,
+    "instagramUserId": null,
+    "accountType": null,
+    "mediaCount": 0,
+    "followersCount": 0,
+    "followingCount": 0,
+    "biography": null,
+    "website": null,
+    "profilePictureUrl": null,
+    "isConnected": false,
+    "connectedAt": null,
+    "lastSyncAt": null,
+    "media": []
+  },
+  "createdAt": {
+    "$date": "2025-09-20T06:15:30.593Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-22T03:41:42.301Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68d0c9ddd67856d0caf0e46e"
+  },
+  "name": "itachipatel",
+  "email": "itachipatel46@gmail.com",
+  "password": "$2a$10$pmigq3xzEcoDCquWcUMhluDXVYPQe5.bAmrlbK70reVFbZo4BWNBa",
+  "role": "user",
+  "avatar": null,
+  "phone": null,
+  "bio": null,
+  "company": null,
+  "website": null,
+  "isActive": true,
+  "lastLogin": {
+    "$date": "2025-09-23T09:46:14.920Z"
+  },
+  "facebook": {
+    "id": null,
+    "name": null,
+    "email": null,
+    "picture": null,
+    "link": null,
+    "accessToken": null,
+    "refreshToken": null,
+    "connectedAt": null,
+    "lastLoginAt": null
+  },
+  "instagram": {
+    "username": null,
+    "accessToken": null,
+    "instagramUserId": null,
+    "accountType": null,
+    "mediaCount": 0,
+    "followersCount": 0,
+    "followingCount": 0,
+    "biography": null,
+    "website": null,
+    "profilePictureUrl": null,
+    "isConnected": false,
+    "connectedAt": null,
+    "lastSyncAt": null,
+    "media": []
+  },
+  "createdAt": {
+    "$date": "2025-09-22T04:00:29.691Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-23T09:46:14.927Z"
+  },
+  "__v": 0
+}]

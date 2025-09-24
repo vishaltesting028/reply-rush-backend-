@@ -1,0 +1,29 @@
+# Facebook Graph API Configuration for Instagram OAuth
+# Add these variables to your .env file
+
+# Facebook App Configuration (for Instagram Business API)
+INSTAGRAM_CLIENT_ID=your_facebook_app_id_here
+INSTAGRAM_CLIENT_SECRET=your_facebook_app_secret_here
+
+# Instagram OAuth Configuration (can use existing values)
+INSTAGRAM_CLIENT_ID=your_facebook_app_id_here  # Same as INSTAGRAM_CLIENT_ID
+INSTAGRAM_CLIENT_SECRET=your_facebook_app_secret_here  # Same as INSTAGRAM_CLIENT_SECRET
+INSTAGRAM_REDIRECT_URI=https://yourdomain.com/auth/instagram/callback
+
+# Frontend URL for OAuth redirects
+FRONTEND_URL=https://yourdomain.com
+
+# Instructions:
+# 1. Go to https://developers.facebook.com/
+# 2. Create or select your Facebook App
+# 3. Add Instagram Basic Display product to your app
+# 4. Copy the App ID and App Secret from the Basic Settings
+# 5. Update the redirect URI in your Facebook App settings to match INSTAGRAM_REDIRECT_URI
+# 6. Replace the placeholder values above with your actual credentials
+
+# Note: The Facebook Graph API approach provides access to Instagram Business Accounts
+# which offer more features than the Basic Display API, including:
+# - Media publishing
+# - Insights and analytics
+# - Comment management
+# - Story publishing
