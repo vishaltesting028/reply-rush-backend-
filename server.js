@@ -35,8 +35,10 @@ app.use(session({
   }
 }));
 
+const DBURL = "mongodb://replyrush_user_408675:rMsXTL0qF4XfwLrxhQs3k@69.16.220.65:27017/replyrush_db_408675"
+
 // Database connection
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/ReplyRushh', {
+mongoose.connect(DBURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
